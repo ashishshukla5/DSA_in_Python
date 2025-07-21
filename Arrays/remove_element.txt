@@ -1,0 +1,34 @@
+Problem Name: Remove Element
+
+LeetCode Problem Link: https://leetcode.com/problems/remove-element/
+
+Problem Statement (Short):
+Given an array nums and a value val, remove all instances of that value in-place and return the new length.  
+Do not allocate extra space for another array; you must do this by modifying the input array in-place with O(1) extra memory.
+
+Example:
+Input: nums = [3,2,2,3], val = 3  
+Output: 2, nums = [2,2,_,_]
+
+Approach (Two Pointer):
+- Use two pointers: one for iterating through the array, one for tracking the position to overwrite.
+- When nums[i] != val, copy nums[i] to the front and increment the overwrite pointer.
+- Return the overwrite pointer as the new length.
+
+Steps:
+1. Initialize a pointer `index = 0`.
+2. Loop through the array with index `i`.
+3. If nums[i] != val, set nums[index] = nums[i] and increment index.
+4. After the loop, return index.
+
+Time Complexity:
+- O(n), where n is the number of elements in the array.
+
+Space Complexity:
+- O(1), in-place operation.
+
+Edge Cases:
+- All elements are val.
+- No elements are val.
+- Empty array.
+- Array with one element.
