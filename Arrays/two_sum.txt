@@ -1,0 +1,40 @@
+Problem Name: Two Sum
+
+LeetCode Problem Link: https://leetcode.com/problems/two-sum/
+
+Problem Statement (Short):
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.  
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+Input: nums = [2, 7, 11, 15], target = 9  
+Output: [0, 1]  
+Explanation: nums[0] + nums[1] == 9
+
+Approach (Optimized Hash Map):
+- Iterate through the array while maintaining a hash map (`d`) to store each number and its index.
+- For each element, calculate the complement (`target - nums[i]`).
+- Check if the complement exists in the hash map:
+    - If it does, return the indices of the complement (from the hash map) and the current element.
+    - If not, add the current number and its index to the hash map.
+- This ensures each element is processed only once, resulting in O(n) time complexity.
+
+Steps:
+1. Initialize an empty dictionary `d`.
+2. Loop through the array using index `i`.
+3. For each `nums[i]`, check if `target - nums[i]` exists in `d`.
+4. If found, return `[d[target - nums[i]], i]`.
+5. If not found, add `nums[i]` and its index `i` to `d`.
+6. If no solution is found after the loop, return an empty list.
+
+Time Complexity:
+- O(n), where n is the number of elements in the array.
+
+Space Complexity:
+- O(n), for storing elements in the hash map.
+
+Edge Cases:
+- The array contains negative numbers.
+- The array contains duplicate numbers.
+- The solution should not use the same element twice.
+- The array has only two elements.
